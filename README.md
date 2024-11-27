@@ -11,13 +11,13 @@ __Computer Communications 221 (2024)__
 ### Files
 - agc.h: the overall framework of data structure
 - assault.h: the assault part of AGC Sketch
-- Guide_Candidate_Path.h,guide_candidate.h: the guide and candidate part of AGC Sketch
+- Guide_Candidate_Path.h, guide_candidate.h: the guide and candidate part of AGC Sketch
 - param.h: initialization of the structure
 - BOBHash32.h: the hash function
-- heavy_change.cpp,heavy_change0.cpp: the heavy change test
+- heavy_change.cpp, heavy_change0.cpp: the heavy change test
 - heavy_hitter.cpp: the heavy hitter test
-- AGCSketch.cpp,AGCSketch.exe: the frequency test
-- throughput.cpp,throughput.out: the throughput test and the result
+- AGCSketch.cpp: the frequency test
+- throughput.cpp: the throughput test and the result
 ---
 
 ### Compile and Run the examples
