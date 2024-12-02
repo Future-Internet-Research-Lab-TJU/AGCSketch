@@ -79,13 +79,13 @@ void ReadInTraces(const char *trace_prefix)
 void heavy_hitter_test()   //主函数开始
 {
 
-	for(int datafileCnt = START_FILE_NO; datafileCnt <= END_FILE_NO; ++datafileCnt)  //数据集的文件从第一个，一直到最后一个
+	for(int datafileCnt = START_FILE_NO; datafileCnt <= END_FILE_NO; ++datafileCnt)  
 	{
 		
-		AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>* agc = new AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>();   //新建一个
+		AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>* agc = new AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>();   
         unordered_map<string, int> Real_Freq; 
 		int packet_cnt = (int)traces[datafileCnt - 1].size();  
-		for (auto key:traces[datafileCnt - 1])  //对于每个输入的变量i，i[0,packet_cnt]
+		for (auto key:traces[datafileCnt - 1]) 
         {	
             agc->insert(key.c_str(), 1);          
             Real_Freq[key]++;
@@ -104,7 +104,7 @@ void heavy_hitter_test()   //主函数开始
 		cout << "true eflow count = " << HH_true.size() << endl;
 
 		vector< pair<std::string, int> > heavy_hitters;
-		agc->get_heavy_hitters(HEAVY_HITTER_THRESHOLD(packet_cnt), heavy_hitters); //定义heavy hitter的条件，并获取输出什么样格式的heavy hitters
+		agc->get_heavy_hitters(HEAVY_HITTER_THRESHOLD(packet_cnt), heavy_hitters); 
 
 
         set<string> HH_estimate;
@@ -128,18 +128,18 @@ void heavy_hitter_test()   //主函数开始
         int HH_RR_denom = HH_true.size();
         for (auto it : HH_true)
         {
-            HH_RR += HH_estimate.find(it) != HH_estimate.end(); //真实中被估计为大流的流数
+            HH_RR += HH_estimate.find(it) != HH_estimate.end();
             // cout << agc->query(it.c_str()) << ", " << (HH_estimate.find(it) == HH_estimate.end()) << endl;
             //int est_freq = agc->query(it.c_str());          
             //ARE += fabs(est_freq - Real_Freq[it.c_str()]) / (double)Real_Freq[it.c_str()];
         }
         for (auto it : HH_estimate)
         {
-            HH_PR += HH_true.find(it) != HH_true.end();   //估计中真实的大流
+            HH_PR += HH_true.find(it) != HH_true.end();   
 			// cout << agc->query(it.c_str()) << ", " << (HH_true.find(it) == HH_true.end()) << endl;
         }
 		cout << "RR =  " << HH_RR << ", PR = " << HH_PR << endl;
-        for (auto it:Item[datafileCnt - 1]){ //流的个数
+        for (auto it:Item[datafileCnt - 1]){ 
             if (it.second > HEAVY_HITTER_THRESHOLD(packet_cnt)){
                cnt ++; //620
                int est_freq = agc->query(it.first.c_str());
