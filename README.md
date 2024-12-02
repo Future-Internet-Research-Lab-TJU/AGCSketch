@@ -36,7 +36,9 @@ Ubuntu with g++ and make.
 - Compile examples with make
 
 ```
-    $ make
+    $ make frequency
+    $ make heavy_change
+    $ make heavy_hitter
 ```
 
 - The g++ compiler should be suitable 
