@@ -13,11 +13,11 @@ __Computer Communications 221 (2024)__
 - assault.h: the assault part of AGC Sketch
 - Guide_Candidate_Path.h, guide_candidate.h: the guide and candidate part of AGC Sketch
 - param.h: parameters of the AGC Sketch
-- BOBHash32.h: the hash function
-- frequency.cpp: test for flow size estimation
-- heavy_change.cpp: test for heavy changer detection
-- heavy_hitter.cpp: test for heavy hitter detection
-- throughput.cpp: the throughput test and the result
+- BOBHash32.h: the hash functions
+- frequency.cpp: flow size estimation
+- heavy_change.cpp: heavy changer detection
+- heavy_hitter.cpp: heavy hitter detection
+- throughput.cpp: throughput
 ---
 
 ### Compile and Run the examples
