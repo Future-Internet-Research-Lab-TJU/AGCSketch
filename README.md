@@ -9,14 +9,14 @@ __Computer Communications 221 (2024)__
 
 ---
 ### Files
-- agc.h: the overall framework of data structure
+- agc.h: the implementation of AGC Sketch
 - assault.h: the assault part of AGC Sketch
 - Guide_Candidate_Path.h, guide_candidate.h: the guide and candidate part of AGC Sketch
-- param.h: initialization of the structure
+- param.h: parameters of the AGC Sketch
 - BOBHash32.h: the hash function
-- heavy_change.cpp, heavy_change0.cpp: the heavy change test
-- heavy_hitter.cpp: the heavy hitter test
-- AGCSketch.cpp: the frequency test
+- frequency.cpp: test for flow size estimation
+- heavy_change.cpp: test for heavy changer detection
+- heavy_hitter.cpp: test for heavy hitter detection
 - throughput.cpp: the throughput test and the result
 ---
 
@@ -39,6 +39,7 @@ Ubuntu with g++ and make.
     $ make frequency
     $ make heavy_change
     $ make heavy_hitter
+    $ make throughput
 ```
 
 - The g++ compiler should be suitable 
@@ -49,6 +50,7 @@ Ubuntu with g++ and make.
 
 ```
     $ ./frequency
-    $./heavy_change
-    $./heavy_hitter
+    $ ./heavy_change
+    $ ./heavy_hitter
+    $ ./throughput
 ```
