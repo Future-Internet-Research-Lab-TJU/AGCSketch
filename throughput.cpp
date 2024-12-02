@@ -18,8 +18,8 @@ using namespace std::chrono;
 #define RUN_TIME 30
 
 #define Assault_MEM (450 * 1024)  
-#define BUCKET_NUM (Assault_MEM / 8)  //也就是2400
-#define TOT_MEM_IN_BYTES (500 * 1024)   //定义分配的内存大小600KB
+#define BUCKET_NUM (Assault_MEM / 8)  
+#define TOT_MEM_IN_BYTES (500 * 1024)   
 
 vector<string> traces[END_FILE_NO - START_FILE_NO +1];
 unordered_map<string, int> Item[END_FILE_NO - START_FILE_NO +1];
@@ -107,7 +107,7 @@ void throughput_test(FILE *output_file)
 	cout << query_throughput <<endl;
 }
 
-int main()    //主函数开始
+int main()   
 {
 	ReadInTraces("../../data/"); 
 	FILE * output_file = fopen("agc_txt", "a+");
