@@ -14,10 +14,10 @@ using namespace std;
 
 
 #define Guide_Candidate_Mem (50 * 1024)
-#define BUCKET_NUM ((TOT_MEM_IN_BYTES - Guide_Candidate_Mem) / 8)  //也就是19200
+#define BUCKET_NUM ((TOT_MEM_IN_BYTES - Guide_Candidate_Mem) / 8)  
 //#define Assault_Mem (300 * 1024)
-//#define BUCKET_NUM (Assault_Mem / 8)  //也就是19200
-#define TOT_MEM_IN_BYTES (512 * 1024)   //定义分配的内存大小600KB
+//#define BUCKET_NUM (Assault_Mem / 8) 
+#define TOT_MEM_IN_BYTES (512 * 1024)  
 
 
 struct FIVE_TUPLE{	char key[13];	};
@@ -74,17 +74,16 @@ void frequency_test(int memory,  FILE* output_file)
     for(int datafileCnt = START_FILE_NO; datafileCnt <= END_FILE_NO; datafileCnt++)
     {
         AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>* agc = new AGCSketch<BUCKET_NUM, TOT_MEM_IN_BYTES>();
-		for (auto key:traces[datafileCnt - 1])  //插入的时候是按照包来查，i[0,packet_cnt]
+		for (auto key:traces[datafileCnt - 1]) 
 		{
-			agc->insert(key.c_str(), 1); //包的插入操作，类型的转化：因为插入时是uint8_t类型的
+			agc->insert(key.c_str(), 1); 
 
-        }  //插入操作结束
-
+        } 
 
         double ARE = 0;
         double AAE = 0;
         int a = 0;
-        for (auto it:Item[datafileCnt - 1])  //查的时候是按照流来查
+        for (auto it:Item[datafileCnt - 1])  
         {
             int  est_val = agc->query(it.first.c_str());
             ARE += std::abs(est_val - it.second) * 1.0 / (it.second);
