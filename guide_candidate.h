@@ -25,7 +25,7 @@ public:
 	Guide_Candidate_Part() { init();}
 	~Guide_Candidate_Part() { clear(); }  
 
-    void init(){  //初始化一维数组
+    void init(){ 
 		uint32_t in_w = guide_candidate_mem / 4 / 4; 
 		for(int i =0; i < m; i++)
 		{
