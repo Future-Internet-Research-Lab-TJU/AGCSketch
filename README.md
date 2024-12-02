@@ -48,5 +48,7 @@ Ubuntu with g++ and make.
 - Run the examples, and the program will output some statistics. 
 
 ```
-    $ ./agc
+    $ ./frequenvy
+    $./heavy_change
+    $./heavy_hitter
 ```
