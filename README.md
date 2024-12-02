@@ -3,9 +3,9 @@
 ---
 ### Paper
 
-__Zhuo Li,Ziyu Liu,Jindian Liu, Yu Zhang ,Teng Liang, Kaihua Liu__ 
-AGC Sketch: An effective and accurate per-flow measurement to adapt flow size distribution
-__Computer Communications 221 (2024)__ 
+__Zhuo Li,Ziyu Liu,Jindian Liu, Yu Zhang ,Teng Liang, Kaihua Liu.__ 
+AGC Sketch: An effective and accurate per-flow measurement to adapt flow size distribution.
+_Computer Communications 221 (2024)_
 
 ---
 ### Files
